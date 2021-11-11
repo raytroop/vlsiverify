@@ -27,14 +27,14 @@ class driver extends uvm_driver#(seq_item);
         //@(posedge vif.clk);
         wait(vif.o_rvalid)
         req.data = vif.o_rdata;        
-        `uvm_info(get_type_name, $sformatf("raddr = %0h, rdata = %0h", req.addr, req.data), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("raddr = %0h, rdata = %0h", req.addr, req.data), UVM_LOW);
       end 
       else begin // Write Operation
         vif.i_waddr <= req.addr;
         vif.i_wdata <= req.data;
         //@(posedge vif.clk);
         wait(vif.o_wready);
-        `uvm_info(get_type_name, $sformatf("waddr = %0h, wdata = %0h", req.addr, req.data), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("waddr = %0h, wdata = %0h", req.addr, req.data), UVM_LOW);
       end
       seq_item_port.item_done();
     end

@@ -11,7 +11,7 @@ class reg_axi_adapter extends uvm_reg_adapter;
     bus_item.data = rw.data;
     bus_item.rd_or_wr = (rw.kind == UVM_READ) ? 1: 0;
     
-    `uvm_info(get_type_name, $sformatf("reg2bus: addr = %0h, data = %0h, rd_or_wr = %0h", bus_item.addr, bus_item.data, bus_item.rd_or_wr), UVM_LOW);
+    `uvm_info(get_type_name(), $sformatf("reg2bus: addr = %0h, data = %0h, rd_or_wr = %0h", bus_item.addr, bus_item.data, bus_item.rd_or_wr), UVM_LOW);
     return bus_item;
   endfunction
   
