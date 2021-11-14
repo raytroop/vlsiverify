@@ -1,0 +1,2 @@
+./wi_priority: arbitration algorithm with any priority
+./wo_priority: arbitration algorithm without any priority
